@@ -5,12 +5,12 @@ from airflow.operators.python import PythonOperator
 import random
 
 with DAG(
-    #DAG 아이디 설정 
+    # DAG 아이디 설정 
     dag_id="get_rank",
-    #5분마다 실행
-    schedule="*/5 * * * *",
-    #DAG 시작 시간 
-    start_date=pendulum.datetime(2023, 11, 15, tz="Asia/Seoul"),
+    # 하루마다 실행
+    schedule_interval="@daily",
+    # DAG 시작 시간 11월 15일에서 16로 넘어가는 새벽 1시에 시작.
+    start_date=pendulum.datetime(2023, 11, 16, 1, 0, 0, tz="Asia/Seoul"),
     catchup=False
 ) as dag:
     
