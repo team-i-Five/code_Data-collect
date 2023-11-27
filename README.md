@@ -39,8 +39,8 @@ $ docker run --name airflow-c -p 8080:8080 airflow-i
 
 ### REF
 
-- https://github.com/team-i-Five/code_Data-collect/issues/1
+- https://github.com/team-i-Five/code_Data-collect/issues/1 도커 실행 방법 참고 자료
 
-- https://github.com/team-i-Five/code_Data-collect/issues/13
+- https://github.com/team-i-Five/code_Data-collect/issues/13 랭킹 데이터 airflow 진행상황 공유
 
 - https://airflow.apache.org/docs/docker-stack/build.html
