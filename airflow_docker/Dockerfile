@@ -11,6 +11,11 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+User root
+
+# 관리자 권한이 필요한 명령어
+RUN ln -snf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
 USER airflow
 
 COPY ./dags /opt/airflow/dags
@@ -29,7 +34,6 @@ RUN airflow users create \
     --role Admin \
     --email admin@example.com \
     --password 1234
-
 
 # 웹 서버 및 스케줄러 시작
 CMD ["bash", "-c", "airflow db init && airflow webserver -p 8080 -D & airflow scheduler"]
