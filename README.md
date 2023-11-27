@@ -41,11 +41,20 @@ $ docker run --name airflow-c -p 8080:8080 airflow-i
 
 ### DEPLOY
 ```bash
-# AWS ec2 원격접속
-## 각종 권한 설정
-### 도커 설치 및 이미지 빌드, 컨테이너 실행
-$ sudo apt install docker.io
+# root 계정으로 AWS ec2 원격 접속후 원하는 경로에 파일 clone
 $ git clone ...
+## 권한 설정
+$ chmod -R 777 /home/ubuntu/code_Data-collect/
+$ ls -l
+root@ip-172-31-46-25:/home/ubuntu/code_Data-collect# ls -l
+total 16
+-rwxrwxrwx 1 root root  675 Nov 27 06:58 Dockerfile
+-rwxrwxrwx 1 root root 1291 Nov 27 06:58 README.md
+drwxrwxrwx 3 root root 4096 Nov 27 06:58 airflow_docker
+drwxrwxrwx 3 root root 4096 Nov 27 06:58 code
+
+### 도커 설치 및 이미지 빌드, 컨테이너 실행
+$ apt install docker.io
 $ cd airflow_docker
 $ docker build -t airflow-i .
 $ nohup docker run --name airflow-c -p 8080:8080 airflow-i &
