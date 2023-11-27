@@ -1,8 +1,14 @@
 # code_Data-collect
 
+### Code
+
+> **`Test{}__.ipynb`** : 크롤링을 하기 이전 각종 테스트 과정이 담긴 파일<br/>
+> **`Production{}__.ipynb`** : 크롤링 실행 파일
+
+
 ### Docker
 
-- http://localhost:8888/
+- [`./Dockerfile`](https://github.com/team-i-Five/code_Data-collect/blob/main/Dockerfile)
 
 ```bash
 
@@ -15,8 +21,25 @@ $ docker run -v {본인파일위치}/code_Data-collect/code:/app -p 8888:8888 my
 # {본인파일위치} -> ex) /home/user1/project/code_Data-collect/code
 
 ```
+<br>
+
+- [`./airflow_docker/Dockerfile`](https://github.com/team-i-Five/code_Data-collect/blob/main/airflow_docker/Dockerfile)
+
+```bash
+$ cd airflow_docker
+
+$ docker build -t airflow-i .
+
+$ docker run --name airflow-c -p 8080:8080 airflow-i
+
+# 이후 실행된 환경의 url로 접속 포트=8080
+## ex) localhost:8080
+### id=admin, password=1234
+```
 
 ### REF
 
 - https://github.com/team-i-Five/code_Data-collect/issues/1
+
+- https://github.com/team-i-Five/code_Data-collect/issues/13
 
