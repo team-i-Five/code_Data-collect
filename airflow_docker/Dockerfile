@@ -42,4 +42,6 @@ RUN airflow users create \
     --password 1234
 
 # 웹 서버 및 스케줄러 시작
-CMD ["bash", "-c", "airflow webserver -p 8080 -D & airflow scheduler"]
+CMD ["bash", "-c", "airflow webserver -p 8080 -D && airflow scheduler"]
+# & : 하나만 있으면 이어진 명령어들이 동시에 실행
+# && : 이어진 명령어들이 차례대로 실행
