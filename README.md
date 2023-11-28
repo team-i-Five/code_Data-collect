@@ -57,7 +57,7 @@ drwxrwxrwx 3 root root 4096 Nov 27 06:58 code
 $ apt install docker.io
 $ cd airflow_docker
 $ docker build -t airflow-i .
-$ nohup docker run --name airflow-c -p 8080:8080 airflow-i &
+$ nohup docker run -d --name airflow-c -p 8080:8080 airflow-i &
 
 # AWS ip주소:8080
 ## id=admin, password=1234
