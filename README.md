@@ -46,7 +46,6 @@ $ git clone ...
 ## 권한 설정
 $ chmod -R 777 /home/ubuntu/code_Data-collect/
 $ ls -l
-root@ip-172-31-46-25:/home/ubuntu/code_Data-collect# ls -l
 total 16
 -rwxrwxrwx 1 root root  675 Nov 27 06:58 Dockerfile
 -rwxrwxrwx 1 root root 1291 Nov 27 06:58 README.md
